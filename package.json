@@ -1,6 +1,6 @@
 {
   "name": "@moicky/bscscan",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Explore the Binance Smart Chain using TypeScript and JavaScript",
   "homepage": "https://github.com/moicky/bscscan-ts",
   "author": "Jean-Philippe Monette <contact@jpmonette.net>",
