@@ -45,7 +45,7 @@ export type VerifySourceCodeRequest = {
   // solidity-single-file (default) or solidity-standard-json-input (for std-input-json-format support)
   codeFormat?: "solidity-single-file" | "solidity-standard-json-input";
   contractName: string;
-  // see https://bscscan.com/solcversions for list of support versions
+  // see https://bscscan.com/solcversions for list of support versions
   compilerVersion: string;
   // 0 = No Optimization, 1 = Optimization used (applicable when codeformat=solidity-single-file)
   optimizationUsed: "0" | "1";

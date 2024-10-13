@@ -4,6 +4,8 @@ import {
   GetBalanceMultiResponse,
   GetBalanceRequest,
   GetBalanceResponse,
+  GetMinedBlocksRequest,
+  GetMinedBlocksResponse,
   GetTokenNFTTxRequest,
   GetTokenNFTTxResponse,
   GetTokenTxRequest,
@@ -12,8 +14,6 @@ import {
   GetTxListInternalResponse,
   GetTxListRequest,
   GetTxListResponse,
-  GetMinedBlocksRequest,
-  GetMinedBlocksResponse,
 } from "../typings/accounts";
 
 class Accounts {
@@ -117,7 +117,7 @@ class Accounts {
       const response = await this.do("getminedblocks", opts);
       return response;
     } catch (e) {
-      if (e.message.includes("No transactions found")) {
+      if ((e as Error).message.includes("No transactions found")) {
         return [];
       }
       throw e;

@@ -83,7 +83,6 @@ class Contracts {
    */
   async verifySourceCode(opts: VerifySourceCodeRequest): Promise<VerifySourceCodeResponse> {
     const request = this.client.newRequest("POST", "contract", "verifysourcecode", opts);
-    // @ts-ignore
     return this.client.do(request);
   }
 
@@ -99,7 +98,6 @@ class Contracts {
    */
   async verifyProxyContract(opts: VerifyProxyContractRequest): Promise<VerifyProxyContractResponse> {
     const request = this.client.newRequest("POST", "contract", "verifyproxycontract", opts);
-    // @ts-ignore
     return this.client.do(request);
   }
 
@@ -113,7 +111,6 @@ class Contracts {
    */
   async checkProxyVerification(opts: CheckProxyVerificationRequest): Promise<CheckProxyVerificationResponse> {
     const request = this.client.newRequest("POST", "contract", "checkproxyverification", opts);
-    // @ts-ignore
     return this.client.do(request);
   }
 
