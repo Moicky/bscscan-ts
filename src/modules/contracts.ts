@@ -4,6 +4,8 @@ import {
   CheckProxyVerificationResponse,
   GetAbiRequest,
   GetAbiResponse,
+  GetCreatorAndTxnHashRequest,
+  GetCreatorAndTxnHashResponse,
   GetSourceCodeRequest,
   GetSourceCodeResponse,
   VerifyProxyContractRequest,
@@ -54,6 +56,21 @@ class Contracts {
    */
   async getSourceCode(opts: GetSourceCodeRequest): Promise<GetSourceCodeResponse> {
     return this.do("getsourcecode", opts);
+  }
+
+  /**
+   * Get Contract Creator and Creation Tx Hash
+   * https://docs.bscscan.com/api-endpoints/contracts#get-contract-creator-and-creation-tx-hash
+   *
+   * @param {GetCreatorAndTxnHashRequest} opts
+   * @returns {Promise<GetCreatorAndTxnHashResponse>}
+   * @memberof Contracts
+   */
+  async getCreatorAndTxnHash(opts: GetCreatorAndTxnHashRequest): Promise<GetCreatorAndTxnHashResponse> {
+    if (opts.contractAddresses.length > 5) {
+      throw new Error("Max 5 contract addresses allowed");
+    }
+    return this.do("getcreatorandtxnhash", opts);
   }
 
   /**

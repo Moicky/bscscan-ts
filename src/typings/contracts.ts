@@ -28,6 +28,17 @@ export type GetSourceCodeResponseItem = {
   SwarmSource: string;
 };
 
+export type GetCreatorAndTxnHashRequest = {
+  contractAddresses: string[];
+};
+export type GetCreatorAndTxnHashResponse = Array<GetCreatorAndTxnHashResponseItem>;
+
+export type GetCreatorAndTxnHashResponseItem = {
+  contractAddress: string;
+  contractCreator: string;
+  txHash: string;
+};
+
 export type VerifySourceCodeRequest = {
   contractAddress: string;
   sourceCode: string;

@@ -21,6 +21,17 @@ describe("contracts", () => {
     expect(await client.contracts.getSourceCode(opts)).toMatchSnapshot();
   });
 
+  it("should getCreatorAndTxnHash", async () => {
+    const opts = {
+      contractAddresses: [
+        "0xa8c87a4b2de9bcebeadcc1ca4e6331fe28e3a378",
+        "0xe9e7cea3dedca5984780bafc599bd69add087d56",
+        "0xe4462eb568E2DFbb5b0cA2D3DbB1A35C9Aa98aad",
+      ],
+    };
+    expect(await client.contracts.getCreatorAndTxnHash(opts)).toMatchSnapshot();
+  });
+
   it("should verifySourceCode", async () => {
     const opts: VerifySourceCodeRequest = {
       contractAddress: "0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82",
