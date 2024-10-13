@@ -26,7 +26,7 @@ export const contractResponses: Record<string, Record<string, any>> = {
         },
       ],
     },
-    getcreatorandtxnhash: {
+    getcontractcreation: {
       status: "1",
       message: "OK",
       result: [

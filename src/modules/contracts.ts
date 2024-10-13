@@ -70,7 +70,7 @@ class Contracts {
     if (opts.contractAddresses.length > 5) {
       throw new Error("Max 5 contract addresses allowed");
     }
-    return this.do("getcreatorandtxnhash", opts);
+    return this.do("getcontractcreation", opts);
   }
 
   /**
